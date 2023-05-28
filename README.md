@@ -45,9 +45,9 @@ INOP LEARN is an innovative mobile application aimed at enhancing the sharing of
 Downlad the app from playstore here [link](https://playstore.com)
 
 If you wish to build codes locally, clone this repository with the command
-- copy first the link to the repository
-- git clone then the link to the repository 
-- cd/ into the directory of the cloned repository in this it will be the name of the repo otherwise rename by you
+- first, copy the link to the repository
+- git clone (link to repository)
+- cd/ into the directory of the cloned repository, this is the original name of the cloned repo otherwise rename by you
 - open the project in your favourite editor
 - In the terminal cd into the root project directory, select an android emulator and run the command
 - flutter run -- this command will download all the dependencies needed for the project to work and the app should be live on your android emulator
@@ -90,9 +90,6 @@ Our app offers two Screen for better user experience and accessibility:
 ### Material Screen
 <img src="./dev_assets/student-material-screen.png">
 
-### Detail Mode
-<img src="./dev_assets/inop-learn-logo.png">
-
 ### Organize Screen
 <img src="./dev_assets/student-organize-screen.png">
 
@@ -110,7 +107,7 @@ Our app offers two Screen for better user experience and accessibility:
 
 </br>
 
-### All of the source codes are available in forms of embedded git submodules.
+### All of the source codes are available here.
 
 - INOP LEARN APP SOURCE CODE [@nnam-droid12](https://github.com/nnam-droid12/inop-learn)
 
