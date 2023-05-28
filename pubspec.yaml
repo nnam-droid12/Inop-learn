@@ -42,17 +42,27 @@ dependencies:
   country_picker: ^2.0.20
   firebase_auth: 
   shared_preferences: ^2.0.18
+  get:
   pinput: ^2.2.31
   provider: ^6.0.5
   image_picker: ^0.8.7
   pdf_text: ^0.5.0
   file_picker: ^5.2.6
-  alan_voice: 3.0.0
+  easy_pdf_viewer: ^1.0.6
+  speech_to_text: ^6.1.1
+  http: ^0.13.6
+  dialog_flowtter:
+  firebase_analytics: ^10.4.1
+  camera: ^0.10.5+2
+  tflite: ^1.1.2
+
+  
+
  
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  flutter_launcher_icons: "^0.12.0"
+  flutter_launcher_icons: ^0.13.1
 
 
 flutter_icons:
@@ -60,7 +70,7 @@ flutter_icons:
   ios: true
   image_path: "dev_assets/inop-learn-logo.png"
   adaptive_icon_background: "#191919"
-  adaptive_icon_foreground: "dev_assets/inop-learn-logo.png"
+  adaptive_icon_foreground: "dev_assets/inop-high-resolution-logo-white-on-transparent-background.png"
   min_sdk_android: 21
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
@@ -84,6 +94,9 @@ flutter:
   assets:
    - assets/
    - dev_assets/
+   - assets/dialog_flow_auth.json
+   - assets/mobilenet_v1_1.0_224.tflite
+   - assets/mobilenet_v1_1.0_224.txt
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

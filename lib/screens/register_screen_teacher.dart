@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:inop_app/widgets/custome_button.dart';
 import 'package:inop_app/screens/register_screen.dart';
-// import 'package:inop_app/screens/text_to_speech.dart';
 import 'package:country_picker/country_picker.dart';
 import 'package:provider/provider.dart';
 import 'package:inop_app/provider/teacherauth_provider.dart';
+import 'package:speech_to_text/speech_to_text.dart' as stt;
+import 'package:dialog_flowtter/dialog_flowtter.dart';
+import 'package:flutter_tts/flutter_tts.dart';
 
 class RegisterTeacher extends StatefulWidget {
   const RegisterTeacher({super.key});
@@ -15,6 +17,91 @@ class RegisterTeacher extends StatefulWidget {
 
 class _RegisterTeacherState extends State<RegisterTeacher> {
   final TextEditingController phoneController = TextEditingController();
+
+  late DialogFlowtter dialogFlowtter;
+  final TextEditingController _controller = TextEditingController();
+  final stt.SpeechToText _speechToText = stt.SpeechToText();
+
+  final FlutterTts flutterTts = FlutterTts();
+  bool _isListening = false;
+
+  List<Map<String, dynamic>> messages = [];
+
+  void startListening() {
+    if (!_isListening) {
+      _speechToText.listen(
+        onResult: (result) {
+          setState(() {
+            _controller.text = result.recognizedWords;
+          });
+        },
+      );
+      setState(() {
+        _isListening = true;
+      });
+    }
+  }
+
+  void stopListening() {
+    if (_isListening) {
+      _speechToText.stop();
+      setState(() {
+        _isListening = false;
+      });
+    }
+  }
+
+  Future<void> speak(String text) async {
+    await flutterTts.setLanguage('en-US');
+    await flutterTts.setSpeechRate(0.5);
+    await flutterTts.setVolume(1.0);
+    await flutterTts.setPitch(0.5);
+
+    await flutterTts.speak(text);
+  }
+
+  void initSpeechToText() async {
+    bool available = await _speechToText.initialize();
+    if (available) {
+      // Initialization successful
+    } else {
+      print('Speech recognition not available');
+    }
+  }
+
+  sendMessage(String text) async {
+    if (text.isEmpty) {
+      print('Message is empty');
+    } else {
+      stopListening();
+      setState(() {
+        addMessage(Message(text: DialogText(text: [text])), true);
+      });
+
+      DetectIntentResponse response = await dialogFlowtter.detectIntent(
+          queryInput: QueryInput(text: TextInput(text: text)));
+      if (response.message == null) return;
+      setState(() {
+        addMessage(response.message!);
+      });
+      final responseText = response.message?.text?.text;
+      if (responseText != null && responseText.isNotEmpty) {
+        speak(responseText[0]);
+      }
+    }
+  }
+
+  addMessage(Message message, [bool isUserMessage = false]) {
+    messages.add({'message': message, 'isUserMessage': isUserMessage});
+  }
+
+  @override
+  void initState() {
+    DialogFlowtter.fromFile().then((instance) => dialogFlowtter = instance);
+    super.initState();
+    initSpeechToText();
+  }
+
 
   Country selectedCountry = Country(
     phoneCode: "234",
@@ -37,7 +124,7 @@ class _RegisterTeacherState extends State<RegisterTeacher> {
       ),
     );
     return Scaffold(
-        body: SafeArea(
+        body: SingleChildScrollView(
       child: Center(
           child: Padding(
         padding: const EdgeInsets.symmetric(vertical: 25, horizontal: 35),
@@ -174,11 +261,22 @@ class _RegisterTeacherState extends State<RegisterTeacher> {
           ],
         ),
       )),
-    ));
+    ),
+    floatingActionButton: FloatingActionButton(
+          backgroundColor: Colors.black38,
+          onPressed: () async {
+            startListening();
+            await sendMessage(_controller.text);
+          },
+          child: Icon(
+            Icons.mic,
+          )),
+    );
   }
 
   void sendTeacherPhoneNumber() {
-    final teacherauth_provider = Provider.of<TeacherAuthProvider>(context, listen: false);
+    final teacherauth_provider =
+        Provider.of<TeacherAuthProvider>(context, listen: false);
     String phoneNumber = phoneController.text.trim();
     teacherauth_provider.TeacherSignInWithPhone(
         context, "+${selectedCountry.phoneCode}$phoneNumber");

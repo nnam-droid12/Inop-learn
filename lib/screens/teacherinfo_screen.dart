@@ -133,22 +133,22 @@ class _TeacherInfoScreenState extends State<TeacherInfoScreen> {
       phoneNumber: "",
       uid: "",
     );
-   if(nameController.text.isNotEmpty && coursetitleController.text.isNotEmpty){
+    if (nameController.text.isNotEmpty &&
+        coursetitleController.text.isNotEmpty) {
       teacherauth_provider.saveTeacherDataToFirebase(
-        context: context,
-        teacherModel: teacherModel,
-        onSuccess: () {
-          teacherauth_provider.saveUserDataLocally().then((value) =>
-              teacherauth_provider.setSignIn().then((value) =>
-                  Navigator.pushAndRemoveUntil(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const TeacherHomeScreen()),
-                      (route) => false)));
-        });
-   }else{
-     showSnackBar(context, "Please upload information");
-   }
-    
+          context: context,
+          teacherModel: teacherModel,
+          onSuccess: () {
+            teacherauth_provider.saveUserDataLocally().then((value) =>
+                teacherauth_provider.setSignIn().then((value) =>
+                    Navigator.pushAndRemoveUntil(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const TeacherHomeScreen()),
+                        (route) => false)));
+          });
+    } else {
+      showSnackBar(context, "Please upload information");
+    }
   }
 }

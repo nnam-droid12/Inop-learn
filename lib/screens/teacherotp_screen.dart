@@ -4,7 +4,6 @@ import 'package:inop_app/screens/teacher_home_screen.dart';
 import 'package:inop_app/screens/teacherinfo_screen.dart';
 import 'package:pinput/pinput.dart';
 import 'package:provider/provider.dart';
-
 import '../utils/utils.dart';
 import '../widgets/custome_button.dart';
 
@@ -26,7 +25,7 @@ class _TeacherOtpScreenState extends State<TeacherOtpScreen> {
         Provider.of<TeacherAuthProvider>(context, listen: true).isLoading;
 
     return Scaffold(
-        body: SafeArea(
+        body: SingleChildScrollView(
             child: isLoading == true
                 ? const Center(
                     child: CircularProgressIndicator(color: Colors.black),
@@ -52,11 +51,11 @@ class _TeacherOtpScreenState extends State<TeacherOtpScreen> {
                                 color: Colors.blue.shade50),
                             child: Image.asset("assets/tea1.png"),
                           ),
-                          const SizedBox(height: 30),
+                          const SizedBox(height: 20),
                           const Text(
                             "Verification",
                             style: TextStyle(
-                              fontSize: 28,
+                              fontSize: 24,
                               fontWeight: FontWeight.bold,
                             ),
                           ),
@@ -66,13 +65,13 @@ class _TeacherOtpScreenState extends State<TeacherOtpScreen> {
                           const Text(
                             "Enter the OTP sent to your phone number or wait for it to be fetch automatically",
                             style: TextStyle(
-                              fontSize: 20,
+                              fontSize: 16,
                               color: Colors.black38,
                               fontWeight: FontWeight.bold,
                             ),
                             textAlign: TextAlign.center,
                           ),
-                          const SizedBox(height: 20),
+                          const SizedBox(height: 16),
                           Pinput(
                             length: 6,
                             showCursor: true,
@@ -83,7 +82,7 @@ class _TeacherOtpScreenState extends State<TeacherOtpScreen> {
                                     borderRadius: BorderRadius.circular(10),
                                     border: Border.all(color: Colors.black38)),
                                 textStyle: const TextStyle(
-                                  fontSize: 20,
+                                  fontSize: 18,
                                   fontWeight: FontWeight.w600,
                                 )),
                             onCompleted: (value) {
@@ -111,7 +110,7 @@ class _TeacherOtpScreenState extends State<TeacherOtpScreen> {
                           const Text(
                             "Didn't receive any code?",
                             style: TextStyle(
-                              fontSize: 18,
+                              fontSize: 16,
                               fontWeight: FontWeight.bold,
                               color: Colors.black38,
                             ),
@@ -120,7 +119,7 @@ class _TeacherOtpScreenState extends State<TeacherOtpScreen> {
                           const Text(
                             "Resend New Code",
                             style: TextStyle(
-                              fontSize: 20,
+                              fontSize: 16,
                               fontWeight: FontWeight.bold,
                               color: Colors.black,
                             ),
@@ -149,7 +148,7 @@ class _TeacherOtpScreenState extends State<TeacherOtpScreen> {
                                 builder: (context) => const TeacherHomeScreen(),
                               ),
                               (route) => false))));
-            } else {
+            }else {
               Navigator.pushAndRemoveUntil(
                   context,
                   MaterialPageRoute(

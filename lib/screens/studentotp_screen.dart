@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:inop_app/provider/auth_provider.dart';
-import 'package:inop_app/screens/user_home_screen.dart';
 import 'package:inop_app/screens/studentinfo_screen.dart';
+import 'package:inop_app/screens/user_home_screen.dart';
+// import 'package:inop_app/screens/studentinfo_screen.dart';
 import 'package:pinput/pinput.dart';
 import 'package:provider/provider.dart';
 
@@ -26,7 +27,7 @@ class _StudentOtpScreenState extends State<StudentOtpScreen> {
         Provider.of<AuthProvider>(context, listen: true).isLoading;
 
     return Scaffold(
-        body: SafeArea(
+        body: SingleChildScrollView(
             child: isLoading == true
                 ? const Center(
                     child: CircularProgressIndicator(color: Colors.black),
@@ -44,19 +45,19 @@ class _StudentOtpScreenState extends State<StudentOtpScreen> {
                             ),
                           ),
                           Container(
-                            width: 280,
-                            height: 280,
+                            width: 200,
+                            height: 200,
                             padding: const EdgeInsets.all(20.0),
                             decoration: BoxDecoration(
                                 shape: BoxShape.circle,
                                 color: Colors.blue.shade50),
                             child: Image.asset("assets/stu1.jpg"),
                           ),
-                          const SizedBox(height: 30),
+                          const SizedBox(height: 20),
                           const Text(
                             "Verification",
                             style: TextStyle(
-                              fontSize: 28,
+                              fontSize: 24,
                               fontWeight: FontWeight.bold,
                             ),
                           ),
@@ -72,7 +73,7 @@ class _StudentOtpScreenState extends State<StudentOtpScreen> {
                             ),
                             textAlign: TextAlign.center,
                           ),
-                          const SizedBox(height: 20),
+                          const SizedBox(height: 16),
                           Pinput(
                             length: 6,
                             showCursor: true,
@@ -83,7 +84,7 @@ class _StudentOtpScreenState extends State<StudentOtpScreen> {
                                     borderRadius: BorderRadius.circular(10),
                                     border: Border.all(color: Colors.black38)),
                                 textStyle: const TextStyle(
-                                  fontSize: 20,
+                                  fontSize: 16,
                                   fontWeight: FontWeight.w600,
                                 )),
                             onCompleted: (value) {
@@ -92,10 +93,10 @@ class _StudentOtpScreenState extends State<StudentOtpScreen> {
                               });
                             },
                           ),
-                          const SizedBox(height: 20),
+                          const SizedBox(height: 10),
                           SizedBox(
                             width: MediaQuery.of(context).size.width,
-                            height: 50,
+                            height: 45,
                             child: CustomButton(
                               text: "Verify",
                               onPressed: () {
@@ -111,16 +112,16 @@ class _StudentOtpScreenState extends State<StudentOtpScreen> {
                           const Text(
                             "Didn't receive any code?",
                             style: TextStyle(
-                              fontSize: 18,
+                              fontSize: 12,
                               fontWeight: FontWeight.bold,
                               color: Colors.black38,
                             ),
                           ),
-                          const SizedBox(height: 15),
+                          const SizedBox(height: 10),
                           const Text(
                             "Resend New Code",
                             style: TextStyle(
-                              fontSize: 20,
+                              fontSize: 14,
                               fontWeight: FontWeight.bold,
                               color: Colors.black,
                             ),
