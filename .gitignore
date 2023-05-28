@@ -31,7 +31,6 @@ migrate_working_dir/
 .pub-cache/
 .pub/
 /build/
-./assests/dialog_flow_auth.json
 
 # Symbolication related
 app.*.symbols
@@ -49,4 +48,5 @@ app.*.map.json
 **/android/key.properties
 **/build
 
-
+#Assets file
+assets/dialog_flow_auth.json
