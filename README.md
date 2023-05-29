@@ -42,7 +42,7 @@ INOP LEARN is an innovative mobile application aimed at enhancing the sharing of
 <a name="install"></a>
 ## Installation
 
-Downlad the app from playstore here [link](https://playstore.com)
+Downlad the app from playstore here [link](https://play.google.com/store/apps/details?id=com.nnatech.inop_learn)
 
 If you wish to build codes locally, clone this repository with the command
 - first, copy the link to the repository
