@@ -51,6 +51,10 @@ If you wish to build codes locally, clone this repository with the command
 - open the project in your favourite editor
 - In the terminal cd into the root project directory, select an android emulator and run the command
 - flutter run -- this command will download all the dependencies needed for the project to work and the app should be live on your android emulator
+
+- Testers can use this test phone number to test the working feature of the app
+  - test phone number: +234 1234567891
+  - test verification code: 123456
 </br>
 
 <a name="features"></a>
@@ -116,4 +120,4 @@ Our app offers two Screen for better user experience and accessibility:
 <a name="license"></a>
 ## License
 
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License. See the [LICENSE](https://github.com/nnam-droid12/inop-learn/blob/main/LICENSE) file for details.
