@@ -49,4 +49,4 @@ app.*.map.json
 **/build
 
 #Assets file
-assets/dialog_flow_auth.json
+/assets/dialog_flow_auth.json
