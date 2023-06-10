@@ -11,6 +11,7 @@ import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter_tts/flutter_tts.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:pdf_text/pdf_text.dart';
+import 'package:firebase_analytics/firebase_analytics.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -22,6 +23,7 @@ class HomeScreen extends StatefulWidget {
 class HomeScreenState extends State<HomeScreen> {
   final FirebaseFirestore _firebaseFirestore = FirebaseFirestore.instance;
   FlutterTts tts = FlutterTts();
+  FirebaseAnalytics analytics = FirebaseAnalytics.instance;
   List<Map<String, dynamic>> pdfData = [];
 
   Future<String> uploadPdf(String fileName, File file) async {
@@ -55,6 +57,13 @@ class HomeScreenState extends State<HomeScreen> {
       });
       // ignore: avoid_print
       print("Pdf uploaded Successfully");
+
+      await FirebaseAnalytics.instance.logEvent(
+        name: "pdf_created",
+        parameters: {
+          "file_name": fileName,
+        },
+      );
     }
   }
 
@@ -186,6 +195,9 @@ class _PdfViewerScreenState extends State<PdfViewerScreen> {
 
   void speak() async {
     await tts.speak(text!);
+    await FirebaseAnalytics.instance.logEvent(
+      name: 'pdf_audio_playback',
+    );
   }
 
   void stop() async {

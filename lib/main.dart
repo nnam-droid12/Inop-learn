@@ -6,7 +6,7 @@ import 'package:inop_app/screens/welcome_screen.dart';
 import 'package:provider/provider.dart';
 import 'package:camera/camera.dart';
 
-List<CameraDescription>?  cameras;
+List<CameraDescription>? cameras;
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();

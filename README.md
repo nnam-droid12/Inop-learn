@@ -2,7 +2,6 @@
 
 <img alt="image" src="./dev_assets/2023_solutionchallenge_blogheader_1920x1080.png">
 
-<!-- ![header](https://capsule-render.vercel.app/api?type=rect&color=gradient&height=100&section=header&text=%20Connecting-the-Dots%20&desc=Make%20Braille%20Easier&fontSize=30&textBg=true&fontAlign=25&descAlign=65&descAlignY=65&descSize=24) -->
 
 Welcome to INOP LEARN, a mobile application designed to enhance the quality of education for both visually impaired, partially blind students and sighted individuals using voice assistants or conversational AI for easy navigation.
 
@@ -42,7 +41,7 @@ INOP LEARN is an innovative mobile application aimed at enhancing the sharing of
 <a name="install"></a>
 ## Installation
 
-Downlad the app from playstore here [link](https://play.google.com/store/apps/details?id=com.nnatech.inop_learn)
+Downlad the app from playstore here [<img alt="image" src="./dev_assets/playstore-image2.png">](https://play.google.com/store/apps/details?id=com.nnatech.inop_learn)
 
 If you wish to build codes locally, clone this repository with the command
 - first, copy the link to the repository
@@ -52,7 +51,7 @@ If you wish to build codes locally, clone this repository with the command
 - In the terminal cd into the root project directory, select an android emulator and run the command
 - flutter run -- this command will download all the dependencies needed for the project to work and the app should be live on your android emulator
 
-- Testers can use this test phone number to test the working feature of the app
+- Testers can use this test phone number or you can use your real phone number to test the working feature of the app
   - test phone number: +234 1234567891
   - test verification code: 123456
 </br>
