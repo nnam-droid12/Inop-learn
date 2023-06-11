@@ -41,7 +41,7 @@ INOP LEARN is an innovative mobile application aimed at enhancing the sharing of
 <a name="install"></a>
 ## Installation
 
-Downlad the app from playstore here [<img width="100" height="50" alt="image" src="./dev_assets/playstore-image2.png">](https://play.google.com/store/apps/details?id=com.nnatech.inop_learn)
+Downlad the app from playstore here [<img width="130" height="60" alt="image" src="./dev_assets/playstore-image2.png">](https://play.google.com/store/apps/details?id=com.nnatech.inop_learn)
 
 If you wish to build codes locally, clone this repository with the command
 - first, copy the link to the repository
@@ -103,7 +103,7 @@ Our app offers two Screen for better user experience and accessibility:
 
 1. Improve the Voice assistants or conversational AI to answer any type of query.
 2. Make the app available in other languages to increase usability.
-3. Collaborate with government and companies to make the app more accessible to the visually impaired community.
+3. Collaborate with government and companies to make the app more accessible to the visually impaired community as we are already in the process of forging partnership with our university to adopt the INOP LEARN app.
 4. Add a quiz feature to allow Teachers test students on the app.
 5. Improve our object detection model so as to increase accuracy to about 95%.
 
