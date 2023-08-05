@@ -16,7 +16,6 @@ Our app aims to ease the sharing of digital materials between lecturers and stud
 - [Usage](#usage)
 - [In-App Screens](#in-app)
 - [Future Plans](#future-plans)
-- [License](#license)
 
 </br>
 
@@ -40,13 +39,11 @@ INOP LEARN is an innovative mobile application aimed at enhancing the sharing of
 <a name="install"></a>
 ## Installation
 
-Downlad the app from playstore here [<img width="130" height="60" alt="image" src="./dev_assets/playstore-image2.png">](https://play.google.com/store/apps/details?id=com.nnatech.inop_learn)
-
 If you wish to build codes locally, clone this repository with the command
 - first, copy the link to the repository
 - git clone (link to repository)
 - cd/ into the directory of the cloned repository, this is the original name of the cloned repo otherwise rename by you
-- open the project in your favourite editor
+- Make flutter and android studio is installed then open the project in your favourite editor
 - In the terminal cd into the root project directory, select an android emulator and run the command
 - flutter run -- this command will download all the dependencies needed for the project to work and the app should be live on your android emulator
 
@@ -114,7 +111,4 @@ Our app offers two Screen for better user experience and accessibility:
 - INOP LEARN APP SOURCE CODE [@nnam-droid12](https://github.com/nnam-droid12/inop-learn)
 
 </br>
-
-<a name="license"></a>
-## License
 
