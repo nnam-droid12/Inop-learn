@@ -1,6 +1,5 @@
 # INOP LEARN: VIsually/Partially impaired Educational and Accessibility App
 
-<img alt="image" src="./dev_assets/2023_solutionchallenge_blogheader_1920x1080.png">
 
 
 Welcome to INOP LEARN, a mobile application designed to enhance the quality of education for both visually impaired, partially blind students and sighted individuals using voice assistants or conversational AI for easy navigation.
