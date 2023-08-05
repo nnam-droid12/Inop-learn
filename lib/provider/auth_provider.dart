@@ -52,6 +52,7 @@ class AuthProvider extends ChangeNotifier {
               (PhoneAuthCredential phoneAuthCredential) async {
             await _firebaseAuth.signInWithCredential(phoneAuthCredential);
           },
+          timeout: Duration(seconds: 120),
           verificationFailed: (error) {
             throw Exception(error.message);
           },
