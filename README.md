@@ -118,4 +118,3 @@ Our app offers two Screen for better user experience and accessibility:
 <a name="license"></a>
 ## License
 
-This project is licensed under the MIT License. See the [LICENSE](https://github.com/nnam-droid12/inop-learn/blob/main/LICENSE) file for details.
